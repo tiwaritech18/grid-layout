@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Palanquin&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-family: 'Palanquin', sans-serif;
+}
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-rows:0.2fr 1.5fr 1.2fr 0.8fr;
+    grid-template-areas: 
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar content1 content2 content3"
+    "sidebar footer footer footer";
+    grid-gap: 0.2rem;
+}
+ .navlist ul{
+    max-width: 100%;
+    min-width: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.logo img{
+    max-width:20px;
+    min-height: 20px;
+}
+.navlist li{
+    list-style: none;
+    font-weight: 500;
+}
+.container .toggle{
+    float: right;
+    margin-top: 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+.container .toggle .bar{
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+ nav{
+    min-width:20px;
+    grid-area: nav;
+    background-color:skyblue;
+
+}
+@media (max-width:600px) {
+    .toggle{
+        display: flex;
+    }
+    .navlist{
+        display: none;
+        width: 100%;
+    }
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navlist ul{
+        flex-direction: column;
+        width: 100%;
+    }
+    .navlist ul li{
+        text-align: center;
+    }
+    .navlist li a{
+        padding: .5rem 1rem;
+    }
+    .navlist.active{
+        display: flex;
+    }  
+}
+main{
+    background: darkcyan;
+    grid-area: main;
+}
+#sidebar{
+    background:salmon;
+    grid-area: sidebar;
+}
+#content1{
+    background: aquamarine;
+    grid-area:content1 ;
+}
+#content2{
+    background:firebrick;
+    grid-area:content2 ;
+
+}
+#content3{
+    background:gray;
+    grid-area: content3;
+}
+
+footer{
+    background:magenta;
+    grid-area: footer;
+}
+
+
+@media (max-width:750px){
+
+
+}
